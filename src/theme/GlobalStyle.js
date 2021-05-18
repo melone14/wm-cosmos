@@ -10,6 +10,8 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: transparent;
     outline: 0 !important;
+    padding: 0;
+    margin: 0;
   }
 
   button, button:focus, input:focus, textarea:focus, select:focus {
