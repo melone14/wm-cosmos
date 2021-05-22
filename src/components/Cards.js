@@ -1,49 +1,63 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Card } from "./Card";
 
-import img1 from "../assets/img1.png";
-import img2 from "../assets/img2.png";
-import img3 from "../assets/img3.png";
-import img4 from "../assets/img4.png";
+import capsule from "../assets/capsule.png";
+import crew from "../assets/crew.png";
+import rockets from "../assets/rocket.png";
+import starlink from "../assets/starlink.png";
+
+const dataForCards = [
+  {
+    id: 1,
+    url: capsule,
+    title: "Capsules",
+  },
+  {
+    id: 2,
+    url: crew,
+    title: "Crew",
+  },
+  {
+    id: 3,
+    url: rockets,
+    title: "Rockets",
+  },
+  {
+    id: 4,
+    url: starlink,
+    title: "Starlink",
+  },
+];
 
 const Wrapper = styled.div`
-  height: 448px;
-  width: 350px;
+  height: 58.333333333vh;
+  width: 24.305444433vw;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
   row-gap: 30px;
   flex-wrap: wrap;
+  position: absolute;
+  left: 18.055556vw;
+  top: 20.833333vh;
 `;
 
 export const Cards = ({ modalVisibility, setType }) => {
   return (
     <Wrapper>
-      <Card
-        bg={img1}
-        modalVisibility={modalVisibility}
-        // type={type}
-        setType={() => setType("capsules")}
-      />
-      <Card
-        bg={img2}
-        modalVisibility={modalVisibility}
-        // type={type}
-        setType={() => setType("crew")}
-      />
-      <Card
-        bg={img3}
-        modalVisibility={modalVisibility}
-        // type={type}
-        setType={() => setType("rockets")}
-      />
-      <Card
-        bg={img4}
-        modalVisibility={modalVisibility}
-        // type={type}
-        setType={() => setType("starlink")}
-      />
+      {dataForCards.map(({ id, url, title }) => {
+        const path = title.toLowerCase();
+        return (
+          <Card
+            key={id}
+            url={url}
+            title={title}
+            modalVisibility={modalVisibility}
+            setType={() => setType(path)}
+          />
+        );
+      })}
     </Wrapper>
   );
 };

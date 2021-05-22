@@ -23,6 +23,24 @@ const GlobalStyle = createGlobalStyle`
     color: rgba(255,255,255,1);
     background-color: rgba(34, 27, 58, 1)
   }
+
+  /* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(34, 26, 60, 1);
+  border-radius: 8px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(83, 71, 125, 1);
+  border-radius: 8px;
+  height: 76px;
+}
 `;
 
 export default GlobalStyle;

@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
-const StyledLogo = styled.div`
-  width: 116px;
-  height: 23.98px;
+const StyledLogo = styled.img`
+  width: 8.0555%;
+  height: 3.125%;
   position: absolute;
-  top: -136px;
-  left: 155px;
-  background: url("/assets/logo.png");
+  top: 4.6875%;
+  left: 11.4583%;
 `;
 
 export const Logo = () => {
-  return <StyledLogo></StyledLogo>;
+  return <StyledLogo src="/assets/logoSVG.svg"></StyledLogo>;
 };

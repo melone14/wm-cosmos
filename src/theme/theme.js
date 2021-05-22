@@ -27,8 +27,11 @@ export const theme = {
     bodySmall: "0.4px",
   },
   colors: {
-    modalDarlker: "rgba(160, 148, 198, 1)",
+    modalDarker: "rgba(160, 148, 198, 1)",
     modalBrighter: "rgba(210, 203, 233, 1)",
+    modalMenuDarker: "rgba(37, 29, 66, 1)",
+    secondaryBtn: "rgba(5, 201, 183, 1)",
     footerText: "rgba(141, 127, 188, 1)",
+    background: "rgba(34, 27, 58, 1)",
   },
 };

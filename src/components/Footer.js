@@ -1,29 +1,35 @@
 import styled from "styled-components";
 
 const StyledFooter = styled.footer`
-  width: 1111px;
-  height: 16px;
-  /* border: 1px solid red; */
+  width: 100vw;
+  height: 15vh;
   position: absolute;
-  bottom: 24px;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
+  bottom: 0;
 `;
 
-const Text = styled.p`
+const Text1 = styled.p`
+  display: inline-block;
+  width: 14.861111vw;
+  min-width: 202px;
   color: ${({ theme }) => theme.colors.footerText};
   font-size: ${({ theme }) => theme.fontSize.H100};
+  letter-spacing: 0.4;
+  position: absolute;
+  left: 11.458333vw;
+  bottom: 3.125vh;
+`;
+
+const Text2 = styled(Text1)`
+  width: 13.541667vw;
+  min-width: 192px;
+  left: 75.069444vw;
 `;
 
 export const Footer = () => {
   return (
     <StyledFooter>
-      <Text>Copyright © Usertive & SpaceX API</Text>
-      <Text>Recruiment Task / Summer 2021</Text>
+      <Text1>Copyright © Usertive & SpaceX API</Text1>
+      <Text2>Recruiment Task / Summer 2021</Text2>
     </StyledFooter>
   );
 };

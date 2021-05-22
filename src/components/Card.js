@@ -2,36 +2,39 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.figure`
-  height: 208px;
-  width: 160px;
+  position: relative;
+  height: 27.08333vh;
+  width: 11.1111vw;
   border-radius: 16px;
   overflow: hidden;
-`;
+  background-image: linear-gradient(
+      360deg,
+      #2b224a 0%,
+      rgba(43, 34, 74, 0) 100%
+    ),
+    url(${(props) => props.url});
+  background-size: cover;
+  background-position: center;
 
-const Image = styled.img`
-  width: 100%;
-  height: 100%;
-`;
-
-const Overlay = styled.div`
-  display: block;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transition: 0.2s;
   &:before {
-    content: "";
+    ${(props) => (props.title ? `content: '${props.title}';` : "content: '';")}
     position: absolute;
-    top: 0;
+    top: 21.354167vh;
+    font-size: ${({ theme }) => theme.fontSize.H200};
+    font-weight: ${({ theme }) => theme.fontWeight.H200};
     left: 0;
     right: 0;
-    bottom: 0;
-    z-index: 1;
-  }
-  &:hover:before {
-    content: "Details";
     text-align: center;
-    padding: 57% 0;
+  }
+
+  &:hover:before {
+    transition: all 0.3s;
+    cursor: pointer;
+    content: "Details";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     font-size: ${({ theme }) => theme.fontSize.H200};
     font-weight: ${({ theme }) => theme.fontWeight.H200};
     position: absolute;
@@ -47,17 +50,15 @@ const Overlay = styled.div`
   }
 `;
 
-export const Card = ({ bg, modalVisibility, setType }) => {
+export const Card = ({ modalVisibility, setType, url, title }) => {
   return (
     <Wrapper
       onClick={() => {
         modalVisibility();
         setType();
       }}
-    >
-      <Overlay>
-        <Image src={bg} alt="sdsa" />
-      </Overlay>
-    </Wrapper>
+      url={url}
+      title={title}
+    />
   );
 };
